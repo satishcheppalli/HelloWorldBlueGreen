@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: helloworld
+  name: helloworldbluegreen
   annotations:
    service.beta.kubernetes.io/oci-load-balancer-internal: "true"
 spec:
@@ -11,4 +11,4 @@ spec:
     targetPort: 8484
     protocol: TCP
   selector:
-    app: helloworld
+    app: helloworldbluegreen

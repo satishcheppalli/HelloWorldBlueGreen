@@ -3,9 +3,9 @@ apiVersion: extensions/v1beta1
 #apiVersion: v1
 kind: Deployment
 metadata:
-  name: helloworld
+  name: helloworldbluegreen
   labels:
-    app: helloworld
+    app: helloworldbluegreen
 spec:
   replicas: 5
   revisionHistoryLimit: 0
@@ -16,15 +16,15 @@ spec:
 #    maxUnavailable: 25%
   selector:
     matchLabels:
-      app: helloworld
+      app: helloworldbluegreen
   template:
     metadata:
       labels:
-        app: helloworld
+        app: helloworldbluegreen
     spec:
       containers:
-      - name: helloworld
-        image: iad.ocir.io/fedexoraclecloud/fsc/helloworld:latest
+      - name: helloworldbluegreen
+        image: iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8484
