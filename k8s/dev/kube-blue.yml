@@ -14,8 +14,8 @@ spec:
     metadata:
       labels:
         app: helloworldbluegreen
-    spec:
-      containers:
+    spec: 
+      containers: 
       - name: helloworldbluegreen
         #image: iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:latest
         image: iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1
