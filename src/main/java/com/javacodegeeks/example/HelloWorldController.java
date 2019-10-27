@@ -8,6 +8,7 @@ public class HelloWorldController {
 
 	@GetMapping("/hello")
 	public String sayHello() {
-		return "Hello world blue green deployments...";
+		return "<font size="4" face="arial" color="#1c87c9"><b>Blue Deployment</b></font>";
+		return "<font size="4" face="arial" color="#8ebf42"><b>Green Deployment</b></font>";
 	}
 }
