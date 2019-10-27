@@ -40,7 +40,7 @@ spec:
     protocol: TCP
   selector:
     app: helloworldbluegreen
--------    
+---
 apiVersion: autoscaling/v1
 #apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
