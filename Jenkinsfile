@@ -22,7 +22,8 @@ pipeline {
                           ]],
                         branches: [ [name: '*/master'] ]
                       ])
-                sh "docker build -f Dockerfile -t iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT} ." 
+                //sh "docker build -f Dockerfile -t iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT} ."
+		sh "docker build -f Dockerfile -t iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1 ."	
                 }
             }
         }
