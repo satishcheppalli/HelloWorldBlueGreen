@@ -14,6 +14,7 @@ spec:
     metadata:
       labels:
         app: helloworldbluegreen
+        version: v1
     spec: 
       containers: 
       - name: helloworldbluegreen
@@ -35,6 +36,7 @@ metadata:
   name: helloworldbluegreen
   labels:
    name: helloworldbluegreen
+   version: v1
   annotations:
    service.beta.kubernetes.io/oci-load-balancer-internal: "true"
 spec:
