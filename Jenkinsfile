@@ -22,8 +22,7 @@ pipeline {
                           ]],
                         branches: [ [name: '*/master'] ]
                       ])
-                //sh "docker build -f Dockerfile -t iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT} ."
-		sh "docker build -f Dockerfile -t iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1 ."	
+                sh "docker build -f Dockerfile -t iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT} ."
                 }
             }
         }
@@ -40,8 +39,7 @@ pipeline {
                       ])
                 sh "docker login -u 'fedexoraclecloud/oracleidentitycloudservice/2750344' -p 'Ur6G[M>frZ5qMsWp{<QP' iad.ocir.io"
     
-                //sh "docker push iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT}"
-		sh "docker push iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1"
+                sh "docker push iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT}"
                 env.GIT_COMMIT = scmVars.GIT_COMMIT
                 sh "export GIT_COMMIT=${env.GIT_COMMIT}"
                 }
