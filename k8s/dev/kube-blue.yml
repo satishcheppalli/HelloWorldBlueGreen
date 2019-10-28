@@ -14,11 +14,11 @@ spec:
     metadata:
       labels:
         app: helloworldbluegreen
-        version: v1
+        version: "v1"
     spec: 
       containers: 
       - name: helloworldbluegreen
-        image: iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1
+        image: "iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1"
         resources:
          limits:
             cpu: 500m
@@ -36,7 +36,7 @@ metadata:
   name: helloworldbluegreen
   labels:
    name: helloworldbluegreen
-   version: v1
+   version: "v1"
   annotations:
    service.beta.kubernetes.io/oci-load-balancer-internal: "true"
 spec:
