@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: helloworldbluegreen-v2
+  name: helloworldbluegreen-v1
   labels:
     app: helloworldbluegreen
     version: v1
@@ -15,11 +15,11 @@ spec:
     metadata:
       labels:
         app: helloworldbluegreen
-        version: v2
+        version: v1
     spec: 
       containers: 
       - name: helloworldbluegreen
-        image: iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v2
+        image: iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1
         resources:
          limits:
             cpu: 500m
@@ -34,7 +34,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: helloworldbluegreen-green
+  name: helloworldbluegreen
   labels:
    name: helloworldbluegreen
   annotations:
@@ -47,4 +47,4 @@ spec:
     protocol: TCP
   selector:
     app: helloworldbluegreen
-    version: v2
+    version: v1
