@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: helloworldbluegreen-green
+  name: helloworldbluegreen
   labels:
    name: helloworldbluegreen
    version: "v2"
