@@ -37,8 +37,8 @@ metadata:
   labels:
    name: helloworldbluegreen
    version: "v1"
-#  annotations:
-#   service.beta.kubernetes.io/oci-load-balancer-internal: "true"
+  annotations:
+   service.beta.kubernetes.io/oci-load-balancer-internal: "true"
 spec:
   type: LoadBalancer
   ports:
