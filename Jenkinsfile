@@ -42,8 +42,8 @@ pipeline {
     
                 //sh "docker push iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT}"
 		sh "docker push iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1"	
-                env.GIT_COMMIT = scmVars.GIT_COMMIT
-                sh "export GIT_COMMIT=${env.GIT_COMMIT}"
+               // env.GIT_COMMIT = scmVars.GIT_COMMIT
+               // sh "export GIT_COMMIT=${env.GIT_COMMIT}"
                 }
                }
             }
