@@ -18,7 +18,7 @@ spec:
     spec: 
       containers: 
       - name: helloworldbluegreen
-        image: "iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1"
+        image: iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:latest
         resources:
          limits:
             cpu: 500m
