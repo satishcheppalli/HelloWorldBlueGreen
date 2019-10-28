@@ -1,9 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: helloworldbluegreen-v2
+  name: helloworldbluegreen-v1
   labels:
     app: helloworldbluegreen
+    version: v1
 spec:
   replicas: 1
   revisionHistoryLimit: 0
@@ -14,6 +15,7 @@ spec:
     metadata:
       labels:
         app: helloworldbluegreen
+        version: v1
     spec: 
       containers: 
       - name: helloworldbluegreen
@@ -32,7 +34,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: helloworldbluegreen-green
+  name: helloworldbluegreen
   labels:
    name: helloworldbluegreen
   annotations:
@@ -45,3 +47,4 @@ spec:
     protocol: TCP
   selector:
     app: helloworldbluegreen
+    version: v1
