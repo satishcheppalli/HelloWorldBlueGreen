@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: helloworldbluegreen-v2
+  name: helloworldbluegreen-R1
   labels:
     app: helloworldbluegreen
 spec:
@@ -14,7 +14,6 @@ spec:
     metadata:
       labels:
         app: helloworldbluegreen
-        version: "v2"
     spec: 
       containers: 
       - name: helloworldbluegreen
@@ -36,7 +35,6 @@ metadata:
   name: helloworldbluegreen
   labels:
    name: helloworldbluegreen
-   version: "v2"
   annotations:
    service.beta.kubernetes.io/oci-load-balancer-internal: "true"
 spec:
@@ -47,22 +45,3 @@ spec:
     protocol: TCP
   selector:
     app: helloworldbluegreen
-    version: "v2"
----
-apiVersion: autoscaling/v1
-#apiVersion: autoscaling/v2beta1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: helloworldbluegreenautoscaler
-  namespace: satish-ns
-spec:
-  scaleTargetRef:
-    apiVersion: extensions/v1beta1
-    kind: Deployment
-    name: helloworldbluegreen
-  minReplicas: 1
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 20   
-status:
-  currentReplicas: 1
-  desiredReplicas: 1
