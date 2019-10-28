@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: helloworldbluegreen-v1
+  name: helloworldbluegreen-v2
   labels:
     app: helloworldbluegreen
 spec:
@@ -32,7 +32,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: helloworldbluegreen
+  name: helloworldbluegreen-green
   labels:
    name: helloworldbluegreen
   annotations:
