@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: helloworldbluegreen
+  name: helloworldbluegreen-v1
   labels:
     app: helloworldbluegreen
 spec:
