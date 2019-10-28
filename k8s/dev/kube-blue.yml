@@ -47,7 +47,7 @@ spec:
     protocol: TCP
   selector:
     app: helloworldbluegreen
-    version:"v1"
+    version: "v1"
 ---
 apiVersion: autoscaling/v1
 #apiVersion: autoscaling/v2beta1
