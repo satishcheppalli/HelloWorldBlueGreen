@@ -23,7 +23,7 @@ pipeline {
                         branches: [ [name: '*/master'] ]
                       ])
                 //sh "docker build -f Dockerfile -t iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT} ."
-		sh "docker build -f Dockerfile -t iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v2 ."
+		sh "docker build -f Dockerfile -t iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1 ."
                 }
             }
         }
@@ -41,7 +41,7 @@ pipeline {
                 sh "docker login -u 'fedexoraclecloud/oracleidentitycloudservice/2750344' -p 'Ur6G[M>frZ5qMsWp{<QP' iad.ocir.io"
     
                 //sh "docker push iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT}"
-		sh "docker push iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v2"	
+		sh "docker push iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v1"	
                // env.GIT_COMMIT = scmVars.GIT_COMMIT
                // sh "export GIT_COMMIT=${env.GIT_COMMIT}"
                 }
@@ -63,8 +63,8 @@ pipeline {
            // sh("kubectl get ns ${namespace} || kubectl create ns ${namespace}")    
            // sh("sed -i 's#iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:latest#iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:${scmVars.GIT_COMMIT}#g' ./k8s/dev/*.yml")	
 	   // sh("sed -i 's#iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:latest#iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v2#g' ./k8s/dev/*.yml")	
-           // sh("kubectl --namespace=satish-ns apply -f k8s/dev/kube-blue.yml")
-            sh("kubectl --namespace=satish-ns apply -f k8s/dev/kube-green.yml") 
+            sh("kubectl --namespace=satish-ns apply -f k8s/dev/kube-blue.yml")
+            //sh("kubectl --namespace=satish-ns apply -f k8s/dev/kube-green.yml") 
 						}
 					}
 			  }
