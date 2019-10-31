@@ -1,0 +1,50 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworldbluegreen-v2
+  labels:
+    app: helloworldbluegreen
+    version: v2
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: helloworldbluegreen
+  template:
+    metadata:
+      labels:
+        app: helloworldbluegreen
+        version: v2
+    spec: 
+      containers: 
+      - name: helloworldbluegreen
+        image: iad.ocir.io/fedexoraclecloud/fsc/helloworldbluegreen:v2
+        resources:
+         limits:
+            cpu: 500m
+         requests:
+            cpu: 500m
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8484
+      imagePullSecrets:  
+      - name: satishocirsecret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworldbluegreen-green
+  labels:
+   name: helloworldbluegreen
+  annotations:
+   service.beta.kubernetes.io/oci-load-balancer-internal: "true"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8484
+    protocol: TCP
+  selector:
+    app: helloworldbluegreen
+    version: v2
