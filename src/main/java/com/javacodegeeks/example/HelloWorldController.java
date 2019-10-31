@@ -12,8 +12,8 @@ public class HelloWorldController {
 			System.out.println(i);
 		}
 		Thread.sleep(30 * 1000);
-		return "<font size='4' face='arial' color='#1c87c9'><b>Blue Deployment</b></font>";
-		//return "<font size='4' face='arial' color='#8ebf42'><b>Green Deployment</b></font>";
+		//return "<font size='4' face='arial' color='#1c87c9'><b>Blue Deployment</b></font>";
+		return "<font size='4' face='arial' color='#8ebf42'><b>Green Deployment</b></font>";
 		//return "Hello BlueGreen";
 	}
 }
